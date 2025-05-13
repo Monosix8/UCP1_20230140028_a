@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitur Edutech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.5;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: #1e40af;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        nav h1 {
+            margin-right: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        h2 {
+            color: #1e40af;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        #gallery, #video-section {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 3rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+            overflow: hidden;
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+        }
+        .feature-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1e40af;
+            color: white;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>EduTech App</h1>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Fitur</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h2>Galeri Fitur</h2>
+<section id="gallery" aria-label="Galeri fitur">
+    <div class="gallery-grid">
+        <article class="feature-card" tabindex="0" aria-label="Fitur Kecepatan">
+            <img src="operasional.jpg" alt="Ilustrasi Kecepatan" class="feature-image" />
+            <p class="feature-text">Kecepatan tinggi dalam operasional</p>
+        </article>
+        <article class="feature-card" tabindex="0" aria-label="Fitur Keamanan">
+            <img src="Keamanan.jpeg" alt="Ilustrasi Keamanan" class="feature-image" />
+            <p class="feature-text">Keamanan data terbaik dengan enkripsi</p>
+        </article>
+        <article class="feature-card" tabindex="0" aria-label="Fitur Multi Platform">
+            <img src="plat.jpeg" alt="Ilustrasi Multi Platform" class="feature-image" />
+            <p class="feature-text">Tersedia di berbagai platform &amp; perangkat</p>
+        </article>
+        <article class="feature-card" tabindex="0" aria-label="Fitur Dukungan Pelanggan">
+            <img src="cs.jpg" alt="Ilustrasi Dukungan Pelanggan" class="feature-image" />
+            <p class="feature-text">Dukungan pelanggan 24/7 profesional</p>
+        </article>
+    </div>
+</section>
+
+
+    <h2>Video Materi Pembelajaran</h2>
+    <iframe 
+    src="https://www.youtube.com/embed/ELy5oLnxqpE" 
+    title="Video Materi Pembelajaran"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+></iframe>
+
+
+</body>
+</html>
