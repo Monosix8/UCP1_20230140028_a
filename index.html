@@ -64,6 +64,173 @@
   </nav>
 </header>
 
+<style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Main container */
+    .app-container {
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #0056b3;
+      margin: 0;
+    }
+    header p {
+      font-size: 1rem;
+      color: #555;
+    }
+    /* Content */
+    main {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+    main p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  
+    /* Modal overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 15px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    /* Modal box */
+    .modal {
+      background: white;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+      position: relative;
+      padding: 20px 25px 30px 25px;
+      text-align: center;
+      animation: fadeInScale 0.3s ease forwards;
+    }
+  
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  
+    /* Modal headline */
+    .modal h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+    .modal p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    /* Close button */
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+    .modal-close:hover {
+      color: #007bff;
+    }
+  
+    /* Responsive tweaks */
+    @media (max-width: 400px) {
+      .app-container {
+        padding: 15px 10px;
+      }
+      .modal {
+        max-width: 290px;
+        padding: 15px 20px 25px 20px;
+      }
+    }
+  
+  </style>
+  
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="promoPopup" role="dialog" aria-modal="true" aria-labelledby="promoTitle" aria-describedby="promoDesc">
+      <div class="modal">
+        <button class="modal-close" aria-label="Close Promotion Popup" id="closePopupBtn">&times;</button>
+        <h2 id="promoTitle">Special Discount Just for You!</h2>
+        <p id="promoDesc">Enroll now and get 25% off on our new Data Science course. Offer valid this week only! Don't miss out on this chance to upgrade your skills.</p>
+      </div>
+    </div>
+  
+  <script>
+    // Show popup after 5 seconds delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const popup = document.getElementById('promoPopup');
+        popup.classList.add('active');
+        // Trap focus inside modal when open (basic)
+        popup.querySelector('.modal-close').focus();
+      }, 5000);
+    });
+  
+    // Close popup on button click
+    document.getElementById('closePopupBtn').addEventListener('click', () => {
+      const popup = document.getElementById('promoPopup');
+      popup.classList.remove('active');
+    });
+  
+    // Optional: close popup on pressing Escape key when popup is active
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        const popup = document.getElementById('promoPopup');
+        if (popup.classList.contains('active')) {
+          popup.classList.remove('active');
+        }
+      }
+    });
+  </script>
+
 <section>
   <h2>Selamat datang di EduTech!</h2>
   <div class="app-icon">📚</div>
